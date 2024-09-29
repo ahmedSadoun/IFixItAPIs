@@ -1,5 +1,10 @@
 import express from "express";
-import { print, getCategoryWikisChildrenData } from "./iFixItAPI.js";
+import {
+  print,
+  getCategoryWikisChildrenData,
+  getCategoryData,
+  getDeviceCategoryData,
+} from "./iFixItAPI.js";
 const app = express();
 const port = 3000;
 
@@ -8,6 +13,20 @@ app.get("/api/2.0/wikis/CATEGORY/:category/children", async (req, res) => {
   const result = await getCategoryWikisChildrenData(tempParam);
   res.send(result);
 });
+app.get("/api/2.0/categories/:category", async (req, res) => {
+  const tempParam = req.params.category;
+  const result = await getCategoryData(tempParam);
+  res.send(result);
+});
+
+app.get(
+  "/api/2.0/wikis/categories/:category/deviceTroubleshooting",
+  async (req, res) => {
+    const tempParam = req.params.category;
+    const result = await getDeviceCategoryData(tempParam);
+    res.send(result);
+  }
+);
 
 app.get("/", (req, res) => {
   //   print();
