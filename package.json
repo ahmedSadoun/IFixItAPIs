@@ -1,0 +1,25 @@
+{
+  "name": "ifixitapis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmedSadoun/IFixItAPIs.git"
+  },
+  "author": "Ahmed Saadoun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmedSadoun/IFixItAPIs/issues"
+  },
+  "homepage": "https://github.com/ahmedSadoun/IFixItAPIs#readme",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "express": "^4.21.0",
+    "nodemon": "^3.1.7"
+  }
+}
