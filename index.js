@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import {
   print,
   getCategoryWikisChildrenData,
@@ -7,7 +8,7 @@ import {
 } from "./iFixItAPI.js";
 const app = express();
 const port = 3000;
-
+app.use(cors());
 app.get("/api/2.0/wikis/CATEGORY/:category/children", async (req, res) => {
   const tempParam = req.params.category;
   const result = await getCategoryWikisChildrenData(tempParam);

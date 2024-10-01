@@ -11,9 +11,9 @@ const getCategoryWikisChildrenData = async (category) => {
   } catch (error) {
     if (error.response) {
       // Request made and server responded
-      console.error("Error response data:", error.response.data);
-      console.error("Error status:", error.response.status);
-      console.error("Error headers:", error.response.headers);
+      // console.error("Error response data:", error.response.data);
+      // console.error("Error status:", error.response.status);
+      // console.error("Error headers:", error.response.headers);
       return error.response;
     } else if (error.request) {
       // Request was made but no response
@@ -36,9 +36,9 @@ const getCategoryData = async (category) => {
   } catch (error) {
     if (error.response) {
       // Request made and server responded
-      console.error("Error response data:", error.response.data);
-      console.error("Error status:", error.response.status);
-      console.error("Error headers:", error.response.headers);
+      // console.error("Error response data:", error.response.data);
+      // console.error("Error status:", error.response.status);
+      // console.error("Error headers:", error.response.headers);
       return error.response;
     } else if (error.request) {
       // Request was made but no response

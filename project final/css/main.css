@@ -1,0 +1,130 @@
+.bgcolornav
+{
+ background-color: rgb(17, 22, 26);
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+}
+.bgheadcover
+{
+    background-image: url(../img/home.jpg);
+    background-size: 100%100%;
+}
+.padSearch
+{
+   width: 70%;
+}
+.icon-box {
+    font-size: 2.5rem;
+    color: #3498db;
+}
+.category-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.category-box {
+    text-decoration: none;
+    color: inherit;
+}
+.category-box:hover .icon-box {
+    color: #2980b9;
+}
+.bgimport
+{
+    background-color: #b7eef0;
+    
+}
+.bgimport1
+{
+    background-color: #eef8f8;
+    
+}
+.stat-number
+{
+    color: #294bb9;
+}
+.stat-title
+{
+    color: rgb(3, 3, 3);
+
+}
+/* Center the search bar container */
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {
+    width: 50%;
+    min-width: 200px;  /* Minimum width for smaller screens */
+    max-width: 600px;  /* Max width for larger screens */
+    border-radius: 4px;
+}
+
+    /* Custom Styles for Fixed Sidebar */
+    .fixed-sidebar {
+      position: -webkit-sticky; /* For Safari */
+      position: sticky;
+      top: 0;
+      height: 100vh; /* Full viewport height */
+      overflow-y: auto; /* Scroll if content is too long */
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* custom.css */
+.banner-content {
+    background-color: rgba(3, 7, 13, 0.308);
+    border-radius: 20px;
+}
+@media (max-width: 768px) {
+  .col-md-8, .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .search-input {
+        width: 100%;  /* Make the search bar full-width on smaller screens */
+        margin-bottom:10px;
+    }
+}
+
