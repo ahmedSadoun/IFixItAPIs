@@ -5,6 +5,7 @@ import {
   getCategoryWikisChildrenData,
   getCategoryData,
   getDeviceCategoryData,
+  getGuideByID,
 } from "./iFixItAPI.js";
 const app = express();
 const port = 3000;
@@ -15,9 +16,22 @@ app.get("/api/2.0/wikis/CATEGORY/:category/children", async (req, res) => {
   res.send(result);
 });
 app.get("/api/2.0/categories/:category", async (req, res) => {
-  const tempParam = req.params.category;
-  const result = await getCategoryData(tempParam);
-  res.send(result);
+  try {
+    const tempParam = req.params.category;
+    const result = await getCategoryData(tempParam);
+    res.send(result);
+  } catch (error) {
+    console.log(error);
+  }
+});
+app.get("/api/2.0/guides/:guideID", async (req, res) => {
+  try {
+    const tempParam = req.params.guideID;
+    const result = await getGuideByID(tempParam);
+    res.send(result);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 app.get(

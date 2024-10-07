@@ -7,7 +7,20 @@ async function getDataByWikisCategory(category) {
       type: "GET",
     });
 
-    console.log(response); // Handle the successful response
+    // console.log(response); // Handle the successful response
+    return response;
+  } catch (error) {
+    console.error("Error:", error); // Handle errors
+  }
+}
+async function getGuideByID(guideid) {
+  try {
+    const response = await $.ajax({
+      url: `${baseURL}/api/2.0/guides/${guideid}`,
+      type: "GET",
+    });
+
+    // console.log(response); // Handle the successful response
     return response;
   } catch (error) {
     console.error("Error:", error); // Handle errors
@@ -23,7 +36,7 @@ async function getItemsDescriptionByCategory(category) {
       type: "GET",
     });
 
-    console.log("response", response); // Handle the successful response
+    // console.log("response", response); // Handle the successful response
     return response;
   } catch (error) {
     console.error("Error:", error); // Handle errors

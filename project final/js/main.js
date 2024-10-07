@@ -13,6 +13,7 @@ function renderPageSections(categoryItems, categoryObject) {
   renderPageTitleSection(categoryObject);
   renderItems(categoryItems);
   renderGuides(categoryObject.guides);
+  renderFooter();
 }
 // Page Title Begin
 function renderPageTitleSection(categoryObject) {
@@ -36,6 +37,11 @@ function renderGuides(list) {
   let result = buildDevicesGuidesGrid(list);
   document.getElementById("guidesContainer").innerHTML = "";
   document.getElementById("guidesContainer").innerHTML = result;
+}
+function renderFooter() {
+  let result = footerSecton();
+  document.getElementById("footerId").innerHTML = "";
+  document.getElementById("footerId").innerHTML = result;
 }
 // Page Guides ends
 
@@ -76,10 +82,7 @@ function guidItemBuilder(item) {
   console.log("items sss ", item);
   let itemDesign = ` <div class="col-md-4 mb-4">
     <div class="card border-0 shadow-sm">
-      <a href="main.html?category=${item.title.replace(
-        " ",
-        "_"
-      )}" class="text-decoration-none">
+      <a href="stepfix.html?guidID=${item.guideid}" class="text-decoration-none">
         <img src=${item.image?.standard}
              class="card-img-top img-fluid rounded-2" 
              alt="${item.title}">
@@ -110,4 +113,48 @@ function titleSectionBuilder(item) {
           </div>
         </div>`;
   return itemDesign;
+}
+function footerSecton() {
+  let footerSection = `<!-- Footer -->
+    
+    <footer class=" bg-dark text-white  p-3">
+    <!-- <div class="py-2 px-1">
+      <div class="row"> -->
+          <!-- MODERN ACADEMY Section -->
+          <!-- <div class="col-md-3">
+              <p class="fw-bold">MODERN ACADEMY</p>
+              <ul class="list-unstyled">
+                  <li>About Us</li>
+                  <li>Customer Support</li>
+                  <li>Discuss Modern Academy</li>
+                  <li>Careers</li>
+                  <li>Newsletter</li>
+              </ul>
+          </div> -->
+          <!-- Resources Section -->
+          <!-- <div class="col-md-3">
+              <p class="fw-bold">Resources</p>
+              <ul class="list-unstyled">
+                  <li>Press</li>
+                  <li>News</li>
+                  <li>Participate</li>
+                  <li>Retail Locator</li>
+                  <li>For Manufacturers</li>
+              </ul>
+          </div> -->
+          <!-- Legal Section -->
+          <!-- <div class="col-md-3">
+              <p class="fw-bold">Legal</p>
+              <ul class="list-unstyled">
+                  <li>Accessibility</li>
+                  <li>Privacy</li>
+                  <li>Terms</li>
+              </ul>
+          </div> -->
+      </div>
+  
+      <p class="text-center p-3">&copy; 2024 MODERN ACADEMY. All rights reserved.</p>
+    </footer>
+     `;
+  return footerSection;
 }
