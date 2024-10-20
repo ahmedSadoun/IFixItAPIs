@@ -42,6 +42,22 @@ async function getItemsDescriptionByCategory(category) {
     console.error("Error:", error); // Handle errors
   }
 }
+async function searchService(query, doctypes = "device,guide") {
+  try {
+    // "http://localhost:3000/api/2.0/suggest/iphone?doctypes=device,guide"
+
+    const response = await $.ajax({
+      // /api/2.0/suggest/:query
+      url: `${baseURL}/api/2.0/suggest/${query}?doctypes=${doctypes}`,
+      type: "GET",
+    });
+
+    // console.log("response", response); // Handle the successful response
+    return response;
+  } catch (error) {
+    console.error("Error:", error); // Handle errors
+  }
+}
 
 function extractParams() {
   const queryString = window.location.search;

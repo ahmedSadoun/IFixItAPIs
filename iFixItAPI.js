@@ -57,7 +57,7 @@ const getDeviceCategoryData = async (category) => {
     const response = await axios.get(
       `${baseURL}/api/2.0/wikis/CATEGORY/${category}`
     );
-    console.log("Data received:", response.data);
+    // console.log("Data received:", response.data);
     return response.data;
   } catch (error) {
     if (error.response) {
@@ -81,7 +81,33 @@ const getDeviceCategoryData = async (category) => {
 const getGuideByID = async (guideID) => {
   try {
     const response = await axios.get(`${baseURL}/api/2.0/guides/${guideID}`);
-    console.log("Data received:", response.data);
+    // console.log("Data received:", response.data);
+    return response.data;
+  } catch (error) {
+    if (error.response) {
+      // Request made and server responded
+      console.error("Error response data:", error.response.data);
+      console.error("Error status:", error.response.status);
+      console.error("Error headers:", error.response.headers);
+      return error.response;
+    } else if (error.request) {
+      // Request was made but no response
+      console.error("No response received:", error.request);
+      return error.request;
+    } else {
+      // Something else caused the error
+      console.error("Error:", error.message);
+      return error.message;
+    }
+  }
+};
+const searchService = async (query, doctypes) => {
+  try {
+    //https://www.ifixit.com/api/2.0/suggest/iphone?doctypes=device,guide
+    const response = await axios.get(
+      `${baseURL}/api/2.0/suggest/${query}?doctypes=${doctypes}`
+    );
+    // console.log("Data received:", response.data);
     return response.data;
   } catch (error) {
     if (error.response) {
@@ -111,4 +137,5 @@ export {
   getCategoryData,
   getDeviceCategoryData,
   getGuideByID,
+  searchService
 };

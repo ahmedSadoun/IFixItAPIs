@@ -12,6 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
      <script src="./Services/services.js"></script>
      <script src="./js/steps.js"></script>
+    <script src="./Services/searchUtils.js"></script>
+
   </head>
 <body class=" position-relative">
    <!-- Navigation Bar -->
@@ -41,7 +43,8 @@
             </ul>
             <!-- Search Bar (Centered) -->
             <div class="mx-auto search-container ">
-                <input class="form-control search-input rounded-5" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control search-input rounded-5" id="header-input-search-field"
+                type="search" placeholder="Search" aria-label="Search">
             </div>
             <!-- Right menu (Login and Sign Up) -->
             <div class="d-flex">

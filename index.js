@@ -6,6 +6,7 @@ import {
   getCategoryData,
   getDeviceCategoryData,
   getGuideByID,
+  searchService,
 } from "./iFixItAPI.js";
 const app = express();
 const port = 3000;
@@ -22,6 +23,7 @@ app.get("/api/2.0/categories/:category", async (req, res) => {
     res.send(result);
   } catch (error) {
     console.log(error);
+    res.status(500).send("Internal Server Error!");
   }
 });
 app.get("/api/2.0/guides/:guideID", async (req, res) => {
@@ -31,15 +33,35 @@ app.get("/api/2.0/guides/:guideID", async (req, res) => {
     res.send(result);
   } catch (error) {
     console.log(error);
+    res.status(500).send("Internal Server Error!");
   }
 });
 
 app.get(
   "/api/2.0/wikis/categories/:category/deviceTroubleshooting",
   async (req, res) => {
-    const tempParam = req.params.category;
-    const result = await getDeviceCategoryData(tempParam);
-    res.send(result);
+    try {
+      const tempParam = req.params.category;
+      const result = await getDeviceCategoryData(tempParam);
+      res.send(result);
+    } catch (error) {
+      res.status(500).send("Internal Server Error!");
+    }
+  }
+);
+app.get(
+  "/api/2.0/suggest/:query", // ?doctypes=guides,device
+  async (req, res) => {
+    try {
+      const tempParam = req.params.query;
+      const query = req.query.doctypes;
+      console.log(query);
+      const result = await searchService(tempParam, query);
+      res.send(result);
+    } catch (error) {
+      console.log(error);
+      res.status(500).send("Internal Server Error!");
+    }
   }
 );
 
