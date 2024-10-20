@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camera</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./Services/services.js"></script>
+    <script src="./js/main.js"></script>
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">MODERN ACADEMY</a>
+        <!-- Toggler/collapsible Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar content -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Left menu items -->
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownAnswers"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Answers
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownAnswers">
+                <li><a class="dropdown-item" href="#">Ask a Question</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- Search Bar (Centered) -->
+          <div class="mx-auto search-container">
+            <input
+              class="form-control search-input rounded-5"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </div>
+          <!-- Right menu (Login and Sign Up) -->
+          <div class="d-flex">
+            <a href="#" class="btn btn-outline-light me-2">Login</a>
+            <a href="#" class="btn btn-light">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Content and Categories Section -->
+    <section class="py-4">
+      <div class="container">
+        <div class="row">
+          <!-- Categories (Fixed Sidebar) -->
+          <!-- <div class="col-lg-3 col-md-4 col-12 mb-4 mb-md-0 ">
+        <div class="bg-light p-3 rounded">
+          <h4><a href="#main" class="text-decoration-none">Camera</a></h4>
+          <ul class="nav flex-column ms-3">
+            <li class="nav-item"><a href="#Section_Technique" class="nav-link">Technique</a></li>
+            <li class="nav-item"><a href="#Section_Teardown" class="nav-link">Teardown</a></li>
+          </ul>
+        </div>
+      </div> -->
+
+          <!-- Banner Section -->
+          <div class="col-lg-9 col-md-8 col-12">
+            <!-- <div id="title_container">
+        
+      </div> -->
+            <!-- Content Section -->
+            <section class="container py-4">
+              <div id="itemsContainer" class="row">
+                <!-- Content Cell -->
+                <!-- <div class="col-md-4 mb-4">
+      <div class="card border-0 shadow-sm">
+        <a href="/Device/Agfa_Camera" class="text-decoration-none">
+          <img src="https://guide-images.cdn.ifixit.com/igi/pNJyMsiYIIJVbh1l.standard" 
+               srcset="https://guide-images.cdn.ifixit.com/igi/pNJyMsiYIIJVbh1l.medium 2x" 
+               class="card-img-top img-fluid rounded-2" 
+               alt="Agfa Camera">
+          <div class="card-body">
+            <h5 class="card-title">Agfa Camera</h5>
+          </div>
+        </a>
+      </div>
+    </div> -->
+
+                <!-- Add more items here as needed -->
+              </div>
+              <div id="guidesContainer" class="row">
+                <!-- Content Cell -->
+                <!-- <div class="col-md-4 mb-4">
+      <div class="card border-0 shadow-sm">
+        <a href="/Device/Agfa_Camera" class="text-decoration-none">
+          <img src="https://guide-images.cdn.ifixit.com/igi/pNJyMsiYIIJVbh1l.standard" 
+               srcset="https://guide-images.cdn.ifixit.com/igi/pNJyMsiYIIJVbh1l.medium 2x" 
+               class="card-img-top img-fluid rounded-2" 
+               alt="Agfa Camera">
+          <div class="card-body">
+            <h5 class="card-title">Agfa Camera</h5>
+          </div>
+        </a>
+      </div>
+    </div> -->
+
+                <!-- Add more items here as needed -->
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="footerId"></section>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.js"></script>
+  </body>
+</html>
