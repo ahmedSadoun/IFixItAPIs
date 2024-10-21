@@ -8,7 +8,7 @@ $(document).ready(async function () {
   let guideObject = await getGuideByID(guideId);
   console.log(guideObject);
   // let categoryItems = [];
-  if (guideObject.steps && guideObject.steps.length <= 0) {
+  if (!guideObject || !guideObject.steps || guideObject.steps.length <= 0) {
     notFoundContentBuilder();
     return;
   }
