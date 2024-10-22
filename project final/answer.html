@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fix</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body class="d-flex flex-column vh-100">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">MODERN ACADEMY</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownAnswers"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Answers
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownAnswers">
+                <li><a class="dropdown-item" href="#">Ask a Question</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="mx-auto">
+            <input
+              class="form-control search-input rounded-5"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </div>
+          <div class="d-flex">
+            <a href="#" class="btn btn-outline-light me-2">Login</a>
+            <a href="#" class="btn btn-light">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content Section -->
+    <div class="container mt-3 flex-grow-1">
+      <div class="list-group-item mb-2" id="question1">
+        <textarea
+          maxlength="500"
+          class="form-control mb-2"
+          rows="2"
+          placeholder=""
+        ></textarea>
+        <button
+          class="btn btn-primary answer-btn ps-3 pe-3"
+          onclick="addAnswer('question1')"
+        >
+          Ask
+        </button>
+      </div>
+
+      <div class="list-group">
+        <!-- Item 1 -->
+        <div class="list-group-item" id="question1">
+          <h5 class="mb-3">What is your favorite programming language?</h5>
+          <textarea
+            class="form-control mb-2"
+            rows="2"
+            placeholder="Enter your comment..."
+          ></textarea>
+          <button
+            class="btn btn-primary answer-btn"
+            onclick="addAnswer('question1')"
+          >
+            Answer
+          </button>
+          <div class="answers mt-3"></div>
+        </div>
+        <!-- Add more questions as needed -->
+        <!-- Item 1 -->
+        <div class="list-group-item" id="question1">
+          <h5 class="mb-3">What is your favorite programming language?</h5>
+          <textarea
+            class="form-control mb-2"
+            rows="2"
+            placeholder="Enter your comment..."
+          ></textarea>
+          <button
+            class="btn btn-primary answer-btn"
+            onclick="addAnswer('question1')"
+          >
+            Answer
+          </button>
+          <div class="answers mt-3"></div>
+        </div>
+        <!-- Add more questions as needed -->
+      </div>
+    </div>
+
+    <script>
+      function addAnswer(questionId) {
+        const questionElement = document.getElementById(questionId);
+        const textarea = questionElement.querySelector("textarea");
+        const answersContainer = questionElement.querySelector(".answers");
+
+        const answerText = textarea.value.trim();
+        if (answerText) {
+          const answerParagraph = document.createElement("p");
+          answerParagraph.classList.add("text-success", "mb-2");
+          answerParagraph.textContent = answerText;
+
+          answersContainer.appendChild(answerParagraph);
+          textarea.value = ""; // Clear the textarea after adding the answer
+        }
+      }
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white p-3">
+      <p class="text-center p-3">
+        &copy; 2024 MODERN ACADEMY. All rights reserved.
+      </p>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.js"></script>
+  </body>
+</html>
