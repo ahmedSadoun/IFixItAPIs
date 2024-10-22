@@ -17,7 +17,9 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
+        <!-- Brand -->
         <a class="navbar-brand" href="./index.html">MODERN ACADEMY</a>
+        <!-- Toggler/collapsible Button -->
         <button
           class="navbar-toggler"
           type="button"
@@ -29,7 +31,9 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- Navbar content -->
         <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Left menu items -->
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
               <a class="nav-link" href="./index.html">Home</a>
@@ -37,31 +41,37 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="#"
                 id="navbarDropdownAnswers"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Answers
+                Q&A
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownAnswers">
-                <li><a class="dropdown-item" href="#">Ask a Question</a></li>
+                <li>
+                  <a class="dropdown-item" href="./answer.html"
+                    >Questions and Answers
+                  </a>
+                </li>
               </ul>
             </li>
           </ul>
-          <div class="mx-auto">
+          <!-- Search Bar (Centered) -->
+          <div class="mx-auto search-container">
             <input
               class="form-control search-input rounded-5"
+              id="header-input-search-field"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
           </div>
-          <div class="d-flex">
-            <a href="#" class="btn btn-outline-light me-2">Login</a>
-            <a href="#" class="btn btn-light">Sign Up</a>
-          </div>
+          <!-- Right menu (Login and Sign Up) -->
+          <!-- <div class="d-flex">
+                  <a href="#" class="btn btn-outline-light me-2">Login</a>
+                  <a href="#" class="btn btn-light">Sign Up</a>
+              </div> -->
         </div>
       </div>
     </nav>
@@ -71,9 +81,9 @@
       <div class="list-group-item mb-2" id="question1">
         <textarea
           maxlength="500"
-          class="form-control mb-2"
+          class="form-control mb-2 textarea"
           rows="2"
-          placeholder=""
+          placeholder="Ask a Questions ? 😀"
         ></textarea>
         <button
           class="btn btn-primary answer-btn ps-3 pe-3"
@@ -86,26 +96,9 @@
       <div class="list-group">
         <!-- Item 1 -->
         <div class="list-group-item" id="question1">
-          <h5 class="mb-3">What is your favorite programming language?</h5>
+          <h5 class="mb-3 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nam ducimus dolore repellendus optio accusantium soluta molestias, debitis praesentium aliquam? Culpa accusantium atque amet, asperiores pariatur ipsum? Tempora repellat aut repudiandae adipisci quidem ratione in, nisi inventore sapiente aperiam dolores iure, laboriosam accusamus cupiditate quam excepturi quasi commodi. Facilis, totam.</h5>
           <textarea
-            class="form-control mb-2"
-            rows="2"
-            placeholder="Enter your comment..."
-          ></textarea>
-          <button
-            class="btn btn-primary answer-btn"
-            onclick="addAnswer('question1')"
-          >
-            Answer
-          </button>
-          <div class="answers mt-3"></div>
-        </div>
-        <!-- Add more questions as needed -->
-        <!-- Item 1 -->
-        <div class="list-group-item" id="question1">
-          <h5 class="mb-3">What is your favorite programming language?</h5>
-          <textarea
-            class="form-control mb-2"
+            class="form-control  mb-2"
             rows="2"
             placeholder="Enter your comment..."
           ></textarea>
