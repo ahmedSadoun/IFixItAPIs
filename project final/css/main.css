@@ -81,7 +81,9 @@ iframe{
     height: 100%;
 }
 
-
+.body-container{
+    min-height: 630px;
+}
 
 
 
