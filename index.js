@@ -7,8 +7,12 @@ import {
   getDeviceCategoryData,
   getGuideByID,
   searchService,
+  createPosts,
+  getPosts,
+  createComments,
 } from "./iFixItAPI.js";
 const app = express();
+app.use(express.json());
 const port = 3000;
 app.use(cors());
 app.get("/api/2.0/wikis/CATEGORY/:category/children", async (req, res) => {
@@ -64,6 +68,34 @@ app.get(
     }
   }
 );
+app.post("/ords/saadoun_task/ifixit/posts", async (req, res) => {
+  try {
+    const postContent = req.body;
+    console.log(postContent);
+    const result = await createPosts(postContent);
+    res.send(result);
+  } catch (error) {
+    res.status(500).send("Internal Server Error!");
+  }
+});
+app.get("/ords/saadoun_task/ifixit/posts", async (req, res) => {
+  try {
+    const result = await getPosts();
+    res.status(200).send(result);
+  } catch (error) {
+    res.status(500).send("Internal Server Error!");
+  }
+});
+
+app.post("/ords/saadoun_task/ifixit/comments", async (req, res) => {
+  try {
+    const commentContent = req.body;
+    const result = await createComments(commentContent);
+    res.send(result);
+  } catch (error) {
+    res.status(500).send("Internal Server Error!");
+  }
+});
 
 app.get("/", (req, res) => {
   //   print();

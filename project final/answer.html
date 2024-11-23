@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fix</title>
+    <title>Questions And Answer</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/main.css" />
     <!-- Font Awesome CSS -->
@@ -11,6 +11,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./Services/services.js"></script>
+    <script src="./js/questionsAndAnswers.js"></script>
+    <script src="./Services/searchUtils.js"></script>
   </head>
 
   <body class="d-flex flex-column vh-100">
@@ -84,11 +93,10 @@
           class="form-control mb-2 textarea"
           rows="2"
           placeholder="Ask a Questions ? 😀"
+          id="post-content"
         ></textarea>
-        <button
-          class="btn btn-primary answer-btn ps-3 pe-3"
-          onclick="addAnswer('question1')"
-        >
+        <button class="btn btn-primary answer-btn ps-3 pe-3" id="add-post">
+          <!-- onclick="addAnswer('question1')" -->
           Ask
         </button>
       </div>
@@ -96,15 +104,25 @@
       <div class="list-group">
         <!-- Item 1 -->
         <div class="list-group-item" id="question1">
-          <h5 class="mb-3 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nam ducimus dolore repellendus optio accusantium soluta molestias, debitis praesentium aliquam? Culpa accusantium atque amet, asperiores pariatur ipsum? Tempora repellat aut repudiandae adipisci quidem ratione in, nisi inventore sapiente aperiam dolores iure, laboriosam accusamus cupiditate quam excepturi quasi commodi. Facilis, totam.</h5>
+          <h5 class="mb-3">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus nam ducimus dolore repellendus optio accusantium
+            soluta molestias, debitis praesentium aliquam? Culpa accusantium
+            atque amet, asperiores pariatur ipsum? Tempora repellat aut
+            repudiandae adipisci quidem ratione in, nisi inventore sapiente
+            aperiam dolores iure, laboriosam accusamus cupiditate quam excepturi
+            quasi commodi. Facilis, totam.
+          </h5>
           <textarea
-            class="form-control  mb-2"
+            class="form-control mb-2"
             rows="2"
             placeholder="Enter your comment..."
+            id="comment-content-id"
           ></textarea>
           <button
             class="btn btn-primary answer-btn"
-            onclick="addAnswer('question1')"
+            id="ssssss"
+            onclick="addAnswer()"
           >
             Answer
           </button>

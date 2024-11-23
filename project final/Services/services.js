@@ -1,4 +1,5 @@
 const baseURL = "http://localhost:3000";
+const dbURL = "http://localhost:3000";
 
 async function getDataByWikisCategory(category) {
   try {
@@ -58,7 +59,55 @@ async function searchService(query, doctypes = "device,guide") {
     console.error("Error:", error); // Handle errors
   }
 }
+async function createPost(data) {
+  try {
+    var settings = {
+      url: `${dbURL}/ords/saadoun_task/ifixit/posts`,
+      method: "POST",
+      timeout: 0,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: JSON.stringify(data),
+    };
 
+    let response = await $.ajax(settings);
+    return response;
+  } catch (error) {
+    console.error("Error:", error); // Handle errors
+  }
+}
+async function getPosts(data) {
+  try {
+    var settings = {
+      url: `${dbURL}/ords/saadoun_task/ifixit/posts`,
+      method: "GET",
+      timeout: 0,
+    };
+    let response = await $.ajax(settings);
+    return response;
+  } catch (error) {
+    console.error("Error:", error); // Handle errors
+  }
+}
+async function createComment(data) {
+  try {
+    var settings = {
+      url: `${dbURL}/ords/saadoun_task/ifixit/comments`,
+      method: "POST",
+      timeout: 0,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: JSON.stringify(data),
+    };
+
+    let response = await $.ajax(settings);
+    return response;
+  } catch (error) {
+    console.error("Error:", error); // Handle errors
+  }
+}
 function extractParams() {
   const queryString = window.location.search;
   console.log(queryString);
