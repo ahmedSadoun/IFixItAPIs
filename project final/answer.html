@@ -101,28 +101,22 @@
         </button>
       </div>
 
-      <div class="list-group">
+      <div class="list-group" id="posts-container">
         <!-- Item 1 -->
-        <div class="list-group-item" id="question1">
+        <div class="list-group-item" id="23">
           <h5 class="mb-3">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Necessitatibus nam ducimus dolore repellendus optio accusantium
-            soluta molestias, debitis praesentium aliquam? Culpa accusantium
-            atque amet, asperiores pariatur ipsum? Tempora repellat aut
-            repudiandae adipisci quidem ratione in, nisi inventore sapiente
-            aperiam dolores iure, laboriosam accusamus cupiditate quam excepturi
-            quasi commodi. Facilis, totam.
           </h5>
           <textarea
             class="form-control mb-2"
             rows="2"
             placeholder="Enter your comment..."
-            id="comment-content-id"
+            id="comment-content-23"
           ></textarea>
           <button
             class="btn btn-primary answer-btn"
-            id="ssssss"
-            onclick="addAnswer()"
+            id="23"
+            onclick="onAddCommentsBTNClick(this)"
           >
             Answer
           </button>
@@ -136,7 +130,7 @@
       function addAnswer(questionId) {
         const questionElement = document.getElementById(questionId);
         const textarea = questionElement.querySelector("textarea");
-        const answersContainer = questionElement.querySelector(".answers");
+        const answersContainer = questionElement.querySelector("#answers");
 
         const answerText = textarea.value.trim();
         if (answerText) {

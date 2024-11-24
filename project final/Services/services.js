@@ -77,7 +77,7 @@ async function createPost(data) {
     console.error("Error:", error); // Handle errors
   }
 }
-async function getPosts(data) {
+async function getPosts() {
   try {
     var settings = {
       url: `${dbURL}/ords/saadoun_task/ifixit/posts`,
