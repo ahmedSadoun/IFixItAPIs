@@ -6,14 +6,26 @@ $(document).ready(async function () {
   //   const addCommentBTN = document.getElementById("add-post");
   //   addCommentBTN.addEventListener("click", onAddCommentsBTNClick);
 });
+function addNewPost(postOBJ) {
+  const postsContainer = document.getElementById("posts-container");
+  // Add the content for the new post
+  const newPost = document.createElement("div");
+  newPost.innerHTML = postItem(postOBJ);
+
+  // Prepend the new post to the container
+  postsContainer.prepend(newPost);
+}
 
 async function onAddPostBTNClick() {
-  let body = { post_content: "" };
+  let body = { post_content: "", id: "", post_comments: [] };
   const postContent = document.getElementById("post-content");
   //   console.log(postContent.value);
   if (postContent?.value) {
     body.post_content = postContent.value;
     let res = await createPost(body);
+    body.id = res.post_id;
+    addNewPost(body);
+    postContent.value = "";
     // console.log(res);
   }
 }
@@ -70,6 +82,9 @@ function postBuilder(postList) {
 }
 
 function postItem(postObj) {
+  if (!postObj.id) {
+    return;
+  }
   const postItem = `<div class="list-group-item" id="${postObj.id}">
           <h5 class="mb-3">
            ${postObj.post_content}
