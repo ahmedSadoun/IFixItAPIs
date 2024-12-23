@@ -17,13 +17,14 @@ function addNewPost(postOBJ) {
 }
 
 async function onAddPostBTNClick() {
-  let body = { post_content: "", id: "", post_comments: [] };
+  let body = { post_content: "", id: "", timestamp: "", post_comments: [] };
   const postContent = document.getElementById("post-content");
   //   console.log(postContent.value);
   if (postContent?.value) {
     body.post_content = postContent.value;
     let res = await createPost(body);
     body.id = res.post_id;
+    body.timestamp = res.timestamp;
     addNewPost(body);
     postContent.value = "";
     // console.log(res);
@@ -85,11 +86,19 @@ function postItem(postObj) {
   if (!postObj.id) {
     return;
   }
+  // console.log("the response is : ", postObj);
   const postItem = `<div class="list-group-item" id="${postObj.id}">
           <h5 class="mb-3">
            ${postObj.post_content}
           </h5>
+          <div style="display: flex; justify-content: space-between;">
+           <span style="margin-left: auto;">${
+             postObj.timestamp ? postObj.timestamp : ""
+           }</span> 
+           </div>
+
           <textarea
+
             class="form-control mb-2"
             rows="2"
             placeholder="Enter your comment..."
