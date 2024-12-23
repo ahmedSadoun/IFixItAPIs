@@ -54,16 +54,16 @@ function buildDevicesGuidesGrid(list) {
 }
 function buildStepsGrid(list) {
   let itemsGridDesign = ``;
-  list.forEach((element) => {
-    itemsGridDesign += stepBuilder(element);
+  list.forEach((element, index) => {
+    itemsGridDesign += stepBuilder(element, index + 1);
   });
   return itemsGridDesign;
 }
 
-function stepBuilder(item) {
+function stepBuilder(item, index) {
   let itemDesign = `<div class="row align-items-center mb-4  p-3 rounded-5 stepContanierColor">
            <div class="col-md-6">
-               <h2 id="step1">Step ${item.orderby}: ${item.title}</h2>
+               <h2 id="step1">Step ${index}: ${item.title}</h2>
                <p>${item.lines[0].text_rendered}</p>
            </div>
            <div class="col-md-6">
